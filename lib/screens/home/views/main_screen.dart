@@ -200,7 +200,7 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 40,),
+            const SizedBox(height: 35,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
