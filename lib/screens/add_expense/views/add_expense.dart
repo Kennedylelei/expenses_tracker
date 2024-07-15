@@ -66,6 +66,10 @@ class _AddExpenseState extends State<AddExpense> {
               TextFormField(
                 controller: categoryController,
                 textAlignVertical: TextAlignVertical.center,
+                readOnly: true,
+                onTap: () {
+                  
+                },
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -73,6 +77,72 @@ class _AddExpenseState extends State<AddExpense> {
                     FontAwesomeIcons.list, 
                     size: 16,
                     color: Colors.grey[500]
+                  ),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context, 
+                        builder: (ctx) {
+                          return AlertDialog(
+                            title: const Text(
+                              'Create a Category'
+                            ),
+                            backgroundColor: Theme.of(context).colorScheme.surface,
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(height: 12,),
+                                TextFormField(
+                                  textAlignVertical: TextAlignVertical.center,
+                                  // readOnly: true,
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    hintText: 'Name',
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide.none
+                                    )
+                                  ),
+                                ),
+                                const SizedBox(height: 16,),
+                                TextFormField(
+                                  textAlignVertical: TextAlignVertical.center,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    hintText: 'Icon',
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide.none
+                                    )
+                                  ),
+                                ),
+                                const SizedBox(height: 16,),
+                                TextFormField(
+                                  textAlignVertical: TextAlignVertical.center,
+                                  // readOnly: true,
+                                  decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    hintText: 'Color',
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                      borderSide: BorderSide.none
+                                    )
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        }
+                      );
+                    },
+                    icon: Icon(FontAwesomeIcons.plus, 
+                      size: 16,
+                      color: Colors.grey[500]
+                    )
                   ),
                   hintText: 'Category',
                   border: OutlineInputBorder(
